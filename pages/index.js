@@ -36,7 +36,6 @@ export default function Home() {
           orderBy("timestamp", "desc"),
         ),
         (snapshot) => {
-          console.log("snapshow ", snapshot?.docs);
           setDocument(snapshot?.docs);
         }
       );
@@ -111,7 +110,6 @@ export default function Home() {
 
 export async function getServerSideProps(context) {
   const session = await getSession(context);
-  console.log(session);
   return {
     props: {
       session,

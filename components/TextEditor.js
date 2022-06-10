@@ -27,7 +27,6 @@ function TextEditor() {
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
   const router = useRouter();
   const { id } = router.query;
-  console.log(editorState);
 
   const [value, loading, error] = useDocumentOnce(
     doc(db, 'userDocs', id)
